@@ -14,7 +14,6 @@
 [Documentação SeleniumLibrary](https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html#Add%20Cookie)
 [Documentaçao Robot Framework] (https://robotframework.org/#getting-started)
 
-
 ## Extensão VSCODE
 
 - Robot Framework Language Server
@@ -31,4 +30,3 @@
 ## Regras de negócio:
 
 - Não se aplica
-
