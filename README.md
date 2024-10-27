@@ -1,7 +1,6 @@
 # Automação de Teste com Robot Framework - Site Orange HRM
 
-<img src="![image](https://github.com/user-attachments/assets/f87c7623-ada9-403a-967c-07ba94c470e3)
-" alt="imagem">
+<img src="./img/orange.PNG" alt="imagem">
 
 > Automatizando o site Orange HRM - desenvolvido para ser realizados simulações de testes.
 > Possui várias páginas de exemplo para testar diferentes tipos de elementos e funcionalidades, como autenticação, formulários, upload e download de arquivos, listas dinâmicas, etc.
