@@ -1,4 +1,4 @@
-# Nome do projeto
+# Automação de Teste com Robot Framework - Site Orange HRM
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
@@ -6,17 +6,19 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
 
-<img src="imagem.png" alt="Exemplo imagem">
+<img src="![image](https://github.com/user-attachments/assets/f87c7623-ada9-403a-967c-07ba94c470e3)
+" alt="imagem">
 
-> Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
+> Automatizando o site Orange HRM - desenvolvido para ser realizados simulações de testes.
+> Possui várias páginas de exemplo para testar diferentes tipos de elementos e funcionalidades, como autenticação, formulários, upload e download de arquivos, listas dinâmicas, etc.
 
 ### Ajustes e melhorias
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas para as seguintes tarefas:
 
-- [x] Tarefa 1
-- [x] Tarefa 2
-- [x] Tarefa 3
+- [x] Tarefa 1 - Acessar a tela de login
+- [ ] Tarefa 2
+- [ ] Tarefa 3
 - [ ] Tarefa 4
 - [ ] Tarefa 5
 
@@ -25,7 +27,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 - Você instalou a versão mais recente de `<linguagem / dependência / requeridos>`
-- Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
+- Você tem uma máquina `<Windows>`. Indique qual sistema operacional é compatível / não compatível.
 - Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
 
 ## 🚀 Instalando <nome_do_projeto>
