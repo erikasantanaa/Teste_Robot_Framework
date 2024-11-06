@@ -124,4 +124,4 @@ Cadastrar novo usuário no sistema OrangeHRM
 
     Wait Until Element Is Visible    locator=//div[@class='oxd-input-group__label-wrapper'][contains(.,'User Role')]
     Click Element    locator=(//div[contains(@class,'oxd-select-text--after')])[1]
-    Click Element    locator=//div[@class='oxd-select-text-input'][contains(.,'Admin')]
+    Click Element    locator=//div[@class='oxd-select-text-input'][contains(.,'ESS')]
