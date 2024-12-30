@@ -1,439 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20241130 17:52:24.858" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20241230 00:18:04.185" rpa="false" schemaversion="4">
 <suite id="s1" name="Orangehrm Teste" source="C:\Users\Erika Santana\Desktop\robot-basico-teste-orange\teste_orangehrm\orangehrm_teste.robot">
 <test id="s1-t1" name="casos de teste 01 - Acessar/logar site orangehrm" line="12">
 <kw name="Abrir o navegador" library="orangehrm.resources" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>browser=chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20241130 17:52:25.215" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<msg timestamp="20241130 17:52:28.686" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20241130 17:52:28.686" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 129
-Current browser version is 131.0.6778.86 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
-Stacktrace:
-	GetHandleVerifier [0x00007FF74997FDA5+29557]
-	(No symbol) [0x00007FF7498F2240]
-	(No symbol) [0x00007FF7497AB6EA]
-	(No symbol) [0x00007FF7497EDF67]
-	(No symbol) [0x00007FF7497ECFFB]
-	(No symbol) [0x00007FF7497E7B1E]
-	(No symbol) [0x00007FF7497E268E]
-	(No symbol) [0x00007FF7498332E0]
-	(No symbol) [0x00007FF749832970]
-	(No symbol) [0x00007FF7498272A3]
-	(No symbol) [0x00007FF7497F12DF]
-	(No symbol) [0x00007FF7497F2451]
-	GetHandleVerifier [0x00007FF749CADCBD+3363469]
-	GetHandleVerifier [0x00007FF749CF9B47+3674391]
-	GetHandleVerifier [0x00007FF749CEEAEB+3629243]
-	GetHandleVerifier [0x00007FF749A3FC66+815670]
-	(No symbol) [0x00007FF7498FD6EF]
-	(No symbol) [0x00007FF7498F92B4]
-	(No symbol) [0x00007FF7498F9450]
-	(No symbol) [0x00007FF7498E81FF]
-	BaseThreadInitThunk [0x00007FFFFAFF7374+20]
-	RtlUserThreadStart [0x00007FFFFC65CC91+33]
-</msg>
-<status status="FAIL" starttime="20241130 17:52:25.215" endtime="20241130 17:52:28.811"/>
+<msg timestamp="20241230 00:18:04.553" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20241230 00:18:04.553" endtime="20241230 00:18:06.285"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20241130 17:52:28.811" endtime="20241130 17:52:28.811"/>
+<status status="PASS" starttime="20241230 00:18:06.285" endtime="20241230 00:18:06.322"/>
 </kw>
-<status status="FAIL" starttime="20241130 17:52:25.214" endtime="20241130 17:52:28.812"/>
+<status status="PASS" starttime="20241230 00:18:04.553" endtime="20241230 00:18:06.322"/>
+</kw>
+<kw name="Acessar/logar a tela principal orangehrm" library="orangehrm.resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20241230 00:18:06.324" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
+<status status="PASS" starttime="20241230 00:18:06.324" endtime="20241230 00:18:08.264"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>opensource-demo.orangehrmlive.com</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20241230 00:18:08.276" level="INFO">Current location contains 'opensource-demo.orangehrmlive.com'.</msg>
+<status status="PASS" starttime="20241230 00:18:08.265" endtime="20241230 00:18:08.276"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241230 00:18:11.277" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20241230 00:18:08.276" endtime="20241230 00:18:11.277"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>locator=//div[@class='orangehrm-login-branding']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241230 00:18:11.277" endtime="20241230 00:18:11.313"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@name,'username')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241230 00:18:11.313" level="INFO">Clicking element '//input[contains(@name,'username')]'.</msg>
+<status status="PASS" starttime="20241230 00:18:11.313" endtime="20241230 00:18:11.388"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[contains(@name,'username')]</arg>
+<arg>text=${USUARIO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241230 00:18:11.389" level="INFO">Typing text 'Admin' into text field '//input[contains(@name,'username')]'.</msg>
+<status status="PASS" starttime="20241230 00:18:11.388" endtime="20241230 00:18:11.517"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241230 00:18:14.519" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20241230 00:18:11.518" endtime="20241230 00:18:14.519"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>locator=//input[contains(@type,'password')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20241230 00:18:14.520" level="INFO">Clicking element '//input[contains(@type,'password')]'.</msg>
+<status status="PASS" starttime="20241230 00:18:14.519" endtime="20241230 00:18:14.613"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>locator=//input[contains(@type,'password')]</arg>
+<arg>text=${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20241230 00:18:14.614" level="INFO">Typing text 'admin123' into text field '//input[contains(@type,'password')]'.</msg>
+<status status="PASS" starttime="20241230 00:18:14.613" endtime="20241230 00:18:14.672"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241230 00:18:17.674" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20241230 00:18:14.672" endtime="20241230 00:18:17.674"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>locator=//button[@type='submit'][contains(.,'Login')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20241230 00:18:17.675" level="INFO">Clicking button '//button[@type='submit'][contains(.,'Login')]'.</msg>
+<status status="PASS" starttime="20241230 00:18:17.674" endtime="20241230 00:18:18.869"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20241230 00:18:18.869" endtime="20241230 00:18:19.642"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20241230 00:18:22.642" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20241230 00:18:19.642" endtime="20241230 00:18:22.642"/>
+</kw>
+<status status="PASS" starttime="20241230 00:18:06.323" endtime="20241230 00:18:22.642"/>
+</kw>
+<kw name="Acessar somente a tela de login sem realizar login" library="orangehrm.resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20241230 00:18:22.645" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
+<status status="PASS" starttime="20241230 00:18:22.645" endtime="20241230 00:18:23.227"/>
+</kw>
+<kw name="Location Should Contain" library="SeleniumLibrary">
+<arg>opensource-demo.orangehrmlive.com</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<msg timestamp="20241230 00:18:23.238" level="INFO">Current location contains 'opensource-demo.orangehrmlive.com'.</msg>
+<status status="PASS" starttime="20241230 00:18:23.227" endtime="20241230 00:18:23.238"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css=.oxd-text.oxd-text--h5.orangehrm-login-title</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<msg timestamp="20241230 00:18:28.548" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20241230 00:18:28.549" level="FAIL">Element 'css=.oxd-text.oxd-text--h5.orangehrm-login-title' not visible after 5 seconds.</msg>
+<status status="FAIL" starttime="20241230 00:18:23.238" endtime="20241230 00:18:28.552"/>
+</kw>
+<status status="FAIL" starttime="20241230 00:18:22.644" endtime="20241230 00:18:28.552"/>
 </kw>
 <kw name="Fechar o navegador" library="orangehrm.resources" type="TEARDOWN">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20241130 17:52:28.813" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<status status="PASS" starttime="20241130 17:52:28.813" endtime="20241130 17:52:28.813"/>
+<msg timestamp="20241230 00:18:28.760" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241230 00:18:28.554" endtime="20241230 00:18:28.760"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20241130 17:52:28.813" endtime="20241130 17:52:28.814"/>
+<status status="PASS" starttime="20241230 00:18:28.761" endtime="20241230 00:18:31.071"/>
 </kw>
-<status status="PASS" starttime="20241130 17:52:28.813" endtime="20241130 17:52:28.814"/>
+<status status="PASS" starttime="20241230 00:18:28.553" endtime="20241230 00:18:31.072"/>
 </kw>
 <doc>Teste para acessar e logar no site orangehrm.
-E somente acessar a tela de login acessar a tela principal.</doc>
+E somente acessar a tela de login e tela principal.</doc>
 <tag>acesso_orangehrm</tag>
-<status status="FAIL" starttime="20241130 17:52:25.213" endtime="20241130 17:52:28.814">Setup failed:
-SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 129
-Current browser version is 131.0.6778.86 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
-Stacktrace:
-	GetHandleVerifier [0x00007FF74997FDA5+29557]
-	(No symbol) [0x00007FF7498F2240]
-	(No symbol) [0x00007FF7497AB6EA]
-	(No symbol) [0x00007FF7497EDF67]
-	(No symbol) [0x00007FF7497ECFFB]
-	(No symbol) [0x00007FF7497E7B1E]
-	(No symbol) [0x00007FF7497E268E]
-	(No symbol) [0x00007FF7498332E0]
-	(No symbol) [0x00007FF749832970]
-	(No symbol) [0x00007FF7498272A3]
-	(No symbol) [0x00007FF7497F12DF]
-	(No symbol) [0x00007FF7497F2451]
-	GetHandleVerifier [0x00007FF749CADCBD+3363469]
-	GetHandleVerifier [0x00007FF749CF9B47+3674391]
-	GetHandleVerifier [0x00007FF749CEEAEB+3629243]
-	GetHandleVerifier [0x00007FF749A3FC66+815670]
-	(No symbol) [0x00007FF7498FD6EF]
-	(No symbol) [0x00007FF7498F92B4]
-	(No symbol) [0x00007FF7498F9450]
-	(No symbol) [0x00007FF7498E81FF]
-	BaseThreadInitThunk [0x00007FFFFAFF7374+20]
-	RtlUserThreadStart [0x00007FFFFC65CC91+33]
-</status>
-</test>
-<test id="s1-t2" name="Caso de teste 02 - Verificar Validação nos campos de login (Username e Password)" line="23">
-<kw name="Abrir o navegador" library="orangehrm.resources" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20241130 17:52:28.822" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<msg timestamp="20241130 17:52:32.141" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20241130 17:52:32.141" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 129
-Current browser version is 131.0.6778.86 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
-Stacktrace:
-	GetHandleVerifier [0x00007FF74997FDA5+29557]
-	(No symbol) [0x00007FF7498F2240]
-	(No symbol) [0x00007FF7497AB6EA]
-	(No symbol) [0x00007FF7497EDF67]
-	(No symbol) [0x00007FF7497ECFFB]
-	(No symbol) [0x00007FF7497E7B1E]
-	(No symbol) [0x00007FF7497E268E]
-	(No symbol) [0x00007FF7498332E0]
-	(No symbol) [0x00007FF749832970]
-	(No symbol) [0x00007FF7498272A3]
-	(No symbol) [0x00007FF7497F12DF]
-	(No symbol) [0x00007FF7497F2451]
-	GetHandleVerifier [0x00007FF749CADCBD+3363469]
-	GetHandleVerifier [0x00007FF749CF9B47+3674391]
-	GetHandleVerifier [0x00007FF749CEEAEB+3629243]
-	GetHandleVerifier [0x00007FF749A3FC66+815670]
-	(No symbol) [0x00007FF7498FD6EF]
-	(No symbol) [0x00007FF7498F92B4]
-	(No symbol) [0x00007FF7498F9450]
-	(No symbol) [0x00007FF7498E81FF]
-	BaseThreadInitThunk [0x00007FFFFAFF7374+20]
-	RtlUserThreadStart [0x00007FFFFC65CC91+33]
-</msg>
-<status status="FAIL" starttime="20241130 17:52:28.822" endtime="20241130 17:52:32.144"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20241130 17:52:32.144" endtime="20241130 17:52:32.144"/>
-</kw>
-<status status="FAIL" starttime="20241130 17:52:28.821" endtime="20241130 17:52:32.144"/>
-</kw>
-<kw name="Fechar o navegador" library="orangehrm.resources" type="TEARDOWN">
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20241130 17:52:32.145" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<status status="PASS" starttime="20241130 17:52:32.145" endtime="20241130 17:52:32.145"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20241130 17:52:32.146" endtime="20241130 17:52:32.146"/>
-</kw>
-<status status="PASS" starttime="20241130 17:52:32.145" endtime="20241130 17:52:32.146"/>
-</kw>
-<doc>Teste para acessar Validar vampos de longin com informações
-inválidas.</doc>
-<tag>acesso_orangehrm_validar_campos</tag>
-<status status="FAIL" starttime="20241130 17:52:28.820" endtime="20241130 17:52:32.146">Setup failed:
-SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 129
-Current browser version is 131.0.6778.86 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
-Stacktrace:
-	GetHandleVerifier [0x00007FF74997FDA5+29557]
-	(No symbol) [0x00007FF7498F2240]
-	(No symbol) [0x00007FF7497AB6EA]
-	(No symbol) [0x00007FF7497EDF67]
-	(No symbol) [0x00007FF7497ECFFB]
-	(No symbol) [0x00007FF7497E7B1E]
-	(No symbol) [0x00007FF7497E268E]
-	(No symbol) [0x00007FF7498332E0]
-	(No symbol) [0x00007FF749832970]
-	(No symbol) [0x00007FF7498272A3]
-	(No symbol) [0x00007FF7497F12DF]
-	(No symbol) [0x00007FF7497F2451]
-	GetHandleVerifier [0x00007FF749CADCBD+3363469]
-	GetHandleVerifier [0x00007FF749CF9B47+3674391]
-	GetHandleVerifier [0x00007FF749CEEAEB+3629243]
-	GetHandleVerifier [0x00007FF749A3FC66+815670]
-	(No symbol) [0x00007FF7498FD6EF]
-	(No symbol) [0x00007FF7498F92B4]
-	(No symbol) [0x00007FF7498F9450]
-	(No symbol) [0x00007FF7498E81FF]
-	BaseThreadInitThunk [0x00007FFFFAFF7374+20]
-	RtlUserThreadStart [0x00007FFFFC65CC91+33]
-</status>
-</test>
-<test id="s1-t3" name="Caso de testes 03 - Realizar o login de acesso" line="33">
-<kw name="Abrir o navegador" library="orangehrm.resources" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20241130 17:52:32.152" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<msg timestamp="20241130 17:52:39.649" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20241130 17:52:39.650" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 129
-Current browser version is 131.0.6778.86 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
-Stacktrace:
-	GetHandleVerifier [0x00007FF74997FDA5+29557]
-	(No symbol) [0x00007FF7498F2240]
-	(No symbol) [0x00007FF7497AB6EA]
-	(No symbol) [0x00007FF7497EDF67]
-	(No symbol) [0x00007FF7497ECFFB]
-	(No symbol) [0x00007FF7497E7B1E]
-	(No symbol) [0x00007FF7497E268E]
-	(No symbol) [0x00007FF7498332E0]
-	(No symbol) [0x00007FF749832970]
-	(No symbol) [0x00007FF7498272A3]
-	(No symbol) [0x00007FF7497F12DF]
-	(No symbol) [0x00007FF7497F2451]
-	GetHandleVerifier [0x00007FF749CADCBD+3363469]
-	GetHandleVerifier [0x00007FF749CF9B47+3674391]
-	GetHandleVerifier [0x00007FF749CEEAEB+3629243]
-	GetHandleVerifier [0x00007FF749A3FC66+815670]
-	(No symbol) [0x00007FF7498FD6EF]
-	(No symbol) [0x00007FF7498F92B4]
-	(No symbol) [0x00007FF7498F9450]
-	(No symbol) [0x00007FF7498E81FF]
-	BaseThreadInitThunk [0x00007FFFFAFF7374+20]
-	RtlUserThreadStart [0x00007FFFFC65CC91+33]
-</msg>
-<status status="FAIL" starttime="20241130 17:52:32.152" endtime="20241130 17:52:39.651"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20241130 17:52:39.652" endtime="20241130 17:52:39.652"/>
-</kw>
-<status status="FAIL" starttime="20241130 17:52:32.152" endtime="20241130 17:52:39.652"/>
-</kw>
-<kw name="Fechar o navegador" library="orangehrm.resources" type="TEARDOWN">
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20241130 17:52:39.654" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<status status="PASS" starttime="20241130 17:52:39.653" endtime="20241130 17:52:39.654"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20241130 17:52:39.654" endtime="20241130 17:52:39.654"/>
-</kw>
-<status status="PASS" starttime="20241130 17:52:39.653" endtime="20241130 17:52:39.654"/>
-</kw>
-<doc>Teste para realizar o login e acessar a tela principal do OrangeHRM</doc>
-<tag>acesso_logar_orangehrm</tag>
-<status status="FAIL" starttime="20241130 17:52:32.151" endtime="20241130 17:52:39.654">Setup failed:
-SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 129
-Current browser version is 131.0.6778.86 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
-Stacktrace:
-	GetHandleVerifier [0x00007FF74997FDA5+29557]
-	(No symbol) [0x00007FF7498F2240]
-	(No symbol) [0x00007FF7497AB6EA]
-	(No symbol) [0x00007FF7497EDF67]
-	(No symbol) [0x00007FF7497ECFFB]
-	(No symbol) [0x00007FF7497E7B1E]
-	(No symbol) [0x00007FF7497E268E]
-	(No symbol) [0x00007FF7498332E0]
-	(No symbol) [0x00007FF749832970]
-	(No symbol) [0x00007FF7498272A3]
-	(No symbol) [0x00007FF7497F12DF]
-	(No symbol) [0x00007FF7497F2451]
-	GetHandleVerifier [0x00007FF749CADCBD+3363469]
-	GetHandleVerifier [0x00007FF749CF9B47+3674391]
-	GetHandleVerifier [0x00007FF749CEEAEB+3629243]
-	GetHandleVerifier [0x00007FF749A3FC66+815670]
-	(No symbol) [0x00007FF7498FD6EF]
-	(No symbol) [0x00007FF7498F92B4]
-	(No symbol) [0x00007FF7498F9450]
-	(No symbol) [0x00007FF7498E81FF]
-	BaseThreadInitThunk [0x00007FFFFAFF7374+20]
-	RtlUserThreadStart [0x00007FFFFC65CC91+33]
-</status>
-</test>
-<test id="s1-t4" name="Caso de teste 04 - Pesquisar por usuário" line="40">
-<kw name="Abrir o navegador" library="orangehrm.resources" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20241130 17:52:39.662" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<msg timestamp="20241130 17:52:42.961" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20241130 17:52:42.961" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 129
-Current browser version is 131.0.6778.86 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
-Stacktrace:
-	GetHandleVerifier [0x00007FF74997FDA5+29557]
-	(No symbol) [0x00007FF7498F2240]
-	(No symbol) [0x00007FF7497AB6EA]
-	(No symbol) [0x00007FF7497EDF67]
-	(No symbol) [0x00007FF7497ECFFB]
-	(No symbol) [0x00007FF7497E7B1E]
-	(No symbol) [0x00007FF7497E268E]
-	(No symbol) [0x00007FF7498332E0]
-	(No symbol) [0x00007FF749832970]
-	(No symbol) [0x00007FF7498272A3]
-	(No symbol) [0x00007FF7497F12DF]
-	(No symbol) [0x00007FF7497F2451]
-	GetHandleVerifier [0x00007FF749CADCBD+3363469]
-	GetHandleVerifier [0x00007FF749CF9B47+3674391]
-	GetHandleVerifier [0x00007FF749CEEAEB+3629243]
-	GetHandleVerifier [0x00007FF749A3FC66+815670]
-	(No symbol) [0x00007FF7498FD6EF]
-	(No symbol) [0x00007FF7498F92B4]
-	(No symbol) [0x00007FF7498F9450]
-	(No symbol) [0x00007FF7498E81FF]
-	BaseThreadInitThunk [0x00007FFFFAFF7374+20]
-	RtlUserThreadStart [0x00007FFFFC65CC91+33]
-</msg>
-<status status="FAIL" starttime="20241130 17:52:39.662" endtime="20241130 17:52:42.962"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20241130 17:52:42.962" endtime="20241130 17:52:42.962"/>
-</kw>
-<status status="FAIL" starttime="20241130 17:52:39.661" endtime="20241130 17:52:42.962"/>
-</kw>
-<kw name="Fechar o navegador" library="orangehrm.resources" type="TEARDOWN">
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20241130 17:52:42.963" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<status status="PASS" starttime="20241130 17:52:42.963" endtime="20241130 17:52:42.963"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20241130 17:52:42.963" endtime="20241130 17:52:42.963"/>
-</kw>
-<status status="PASS" starttime="20241130 17:52:42.963" endtime="20241130 17:52:42.964"/>
-</kw>
-<doc>Teste para realizar a pesquisa de usuário</doc>
-<tag>pesquisar-usuario_orangehrm</tag>
-<status status="FAIL" starttime="20241130 17:52:39.661" endtime="20241130 17:52:42.964">Setup failed:
-SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 129
-Current browser version is 131.0.6778.86 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
-Stacktrace:
-	GetHandleVerifier [0x00007FF74997FDA5+29557]
-	(No symbol) [0x00007FF7498F2240]
-	(No symbol) [0x00007FF7497AB6EA]
-	(No symbol) [0x00007FF7497EDF67]
-	(No symbol) [0x00007FF7497ECFFB]
-	(No symbol) [0x00007FF7497E7B1E]
-	(No symbol) [0x00007FF7497E268E]
-	(No symbol) [0x00007FF7498332E0]
-	(No symbol) [0x00007FF749832970]
-	(No symbol) [0x00007FF7498272A3]
-	(No symbol) [0x00007FF7497F12DF]
-	(No symbol) [0x00007FF7497F2451]
-	GetHandleVerifier [0x00007FF749CADCBD+3363469]
-	GetHandleVerifier [0x00007FF749CF9B47+3674391]
-	GetHandleVerifier [0x00007FF749CEEAEB+3629243]
-	GetHandleVerifier [0x00007FF749A3FC66+815670]
-	(No symbol) [0x00007FF7498FD6EF]
-	(No symbol) [0x00007FF7498F92B4]
-	(No symbol) [0x00007FF7498F9450]
-	(No symbol) [0x00007FF7498E81FF]
-	BaseThreadInitThunk [0x00007FFFFAFF7374+20]
-	RtlUserThreadStart [0x00007FFFFC65CC91+33]
-</status>
-</test>
-<test id="s1-t5" name="Caso de teste 05 - Cadastrar usuário" line="52">
-<kw name="Abrir o navegador" library="orangehrm.resources" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20241130 17:52:42.969" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<msg timestamp="20241130 17:52:46.222" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg timestamp="20241130 17:52:46.223" level="FAIL">SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 129
-Current browser version is 131.0.6778.86 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
-Stacktrace:
-	GetHandleVerifier [0x00007FF74997FDA5+29557]
-	(No symbol) [0x00007FF7498F2240]
-	(No symbol) [0x00007FF7497AB6EA]
-	(No symbol) [0x00007FF7497EDF67]
-	(No symbol) [0x00007FF7497ECFFB]
-	(No symbol) [0x00007FF7497E7B1E]
-	(No symbol) [0x00007FF7497E268E]
-	(No symbol) [0x00007FF7498332E0]
-	(No symbol) [0x00007FF749832970]
-	(No symbol) [0x00007FF7498272A3]
-	(No symbol) [0x00007FF7497F12DF]
-	(No symbol) [0x00007FF7497F2451]
-	GetHandleVerifier [0x00007FF749CADCBD+3363469]
-	GetHandleVerifier [0x00007FF749CF9B47+3674391]
-	GetHandleVerifier [0x00007FF749CEEAEB+3629243]
-	GetHandleVerifier [0x00007FF749A3FC66+815670]
-	(No symbol) [0x00007FF7498FD6EF]
-	(No symbol) [0x00007FF7498F92B4]
-	(No symbol) [0x00007FF7498F9450]
-	(No symbol) [0x00007FF7498E81FF]
-	BaseThreadInitThunk [0x00007FFFFAFF7374+20]
-	RtlUserThreadStart [0x00007FFFFC65CC91+33]
-</msg>
-<status status="FAIL" starttime="20241130 17:52:42.969" endtime="20241130 17:52:46.226"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20241130 17:52:46.226" endtime="20241130 17:52:46.226"/>
-</kw>
-<status status="FAIL" starttime="20241130 17:52:42.969" endtime="20241130 17:52:46.226"/>
-</kw>
-<kw name="Fechar o navegador" library="orangehrm.resources" type="TEARDOWN">
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20241130 17:52:46.229" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<status status="PASS" starttime="20241130 17:52:46.228" endtime="20241130 17:52:46.229"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20241130 17:52:46.229" endtime="20241130 17:52:46.229"/>
-</kw>
-<status status="PASS" starttime="20241130 17:52:46.228" endtime="20241130 17:52:46.229"/>
-</kw>
-<doc>Teste para realizar o cadastro de usuário</doc>
-<tag>cadastrar-usuario_orangehrm</tag>
-<status status="FAIL" starttime="20241130 17:52:42.968" endtime="20241130 17:52:46.230">Setup failed:
-SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 129
-Current browser version is 131.0.6778.86 with binary path C:\Program Files\Google\Chrome\Application\chrome.exe
-Stacktrace:
-	GetHandleVerifier [0x00007FF74997FDA5+29557]
-	(No symbol) [0x00007FF7498F2240]
-	(No symbol) [0x00007FF7497AB6EA]
-	(No symbol) [0x00007FF7497EDF67]
-	(No symbol) [0x00007FF7497ECFFB]
-	(No symbol) [0x00007FF7497E7B1E]
-	(No symbol) [0x00007FF7497E268E]
-	(No symbol) [0x00007FF7498332E0]
-	(No symbol) [0x00007FF749832970]
-	(No symbol) [0x00007FF7498272A3]
-	(No symbol) [0x00007FF7497F12DF]
-	(No symbol) [0x00007FF7497F2451]
-	GetHandleVerifier [0x00007FF749CADCBD+3363469]
-	GetHandleVerifier [0x00007FF749CF9B47+3674391]
-	GetHandleVerifier [0x00007FF749CEEAEB+3629243]
-	GetHandleVerifier [0x00007FF749A3FC66+815670]
-	(No symbol) [0x00007FF7498FD6EF]
-	(No symbol) [0x00007FF7498F92B4]
-	(No symbol) [0x00007FF7498F9450]
-	(No symbol) [0x00007FF7498E81FF]
-	BaseThreadInitThunk [0x00007FFFFAFF7374+20]
-	RtlUserThreadStart [0x00007FFFFC65CC91+33]
-</status>
+<status status="FAIL" starttime="20241230 00:18:04.551" endtime="20241230 00:18:31.074">Element 'css=.oxd-text.oxd-text--h5.orangehrm-login-title' not visible after 5 seconds.</status>
 </test>
 <doc>Essa suite testa o site da https://opensource-demo.orangehrmlive.com/</doc>
-<status status="FAIL" starttime="20241130 17:52:24.860" endtime="20241130 17:52:46.238"/>
+<status status="FAIL" starttime="20241230 00:18:04.186" endtime="20241230 00:18:31.078"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="5" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">acesso_logar_orangehrm</stat>
 <stat pass="0" fail="1" skip="0">acesso_orangehrm</stat>
-<stat pass="0" fail="1" skip="0">acesso_orangehrm_validar_campos</stat>
-<stat pass="0" fail="1" skip="0">cadastrar-usuario_orangehrm</stat>
-<stat pass="0" fail="1" skip="0">pesquisar-usuario_orangehrm</stat>
 </tag>
 <suite>
-<stat pass="0" fail="5" skip="0" id="s1" name="Orangehrm Teste">Orangehrm Teste</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Orangehrm Teste">Orangehrm Teste</stat>
 </suite>
 </statistics>
 <errors>

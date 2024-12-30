@@ -11,7 +11,7 @@ Test Teardown    Fechar o navegador
 *** Test Cases ***
 casos de teste 01 - Acessar/logar site orangehrm
     [Documentation]        Teste para acessar e logar no site orangehrm.
-    ...                    E somente acessar a tela de login acessar a tela principal.
+    ...                    E somente acessar a tela de login e tela principal.
     [Tags]                 acesso_orangehrm
     # [Timeout]    20
 
