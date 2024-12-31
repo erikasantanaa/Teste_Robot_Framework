@@ -47,11 +47,17 @@ Acessar/logar a tela principal orangehrm
     Wait Until Element Is Visible    css=.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module
     Sleep    3
 
-Acessar somente a tela de login sem realizar login
-    Go To    url=${URL}
-    Location Should Contain    opensource-demo.orangehrmlive.com
+    #Nos testes web, podemos logar Screenshot com a SeleniumLibrary
+    Log     Tirando print da tela principal após executar o teste
+    Capture Page Screenshot      tela_de_principal_hrm.png
 
-    Wait Until Element Is Visible    css=.oxd-text.oxd-text--h5.orangehrm-login-title
+    #Log no console
+    Log To Console    Finalizando o caso de teste 01
+
+
+
+
+
 
 #---------------------------------------------------------------------
 # Casos de teste 02 - Validar campos de login com dados Inválidos

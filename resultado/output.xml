@@ -1,152 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20241230 00:18:04.185" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20241230 23:16:04.441" rpa="false" schemaversion="4">
 <suite id="s1" name="Orangehrm Teste" source="C:\Users\Erika Santana\Desktop\robot-basico-teste-orange\teste_orangehrm\orangehrm_teste.robot">
 <test id="s1-t1" name="casos de teste 01 - Acessar/logar site orangehrm" line="12">
 <kw name="Abrir o navegador" library="orangehrm.resources" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>browser=chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20241230 00:18:04.553" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20241230 00:18:04.553" endtime="20241230 00:18:06.285"/>
+<msg timestamp="20241230 23:16:04.735" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20241230 23:16:04.735" endtime="20241230 23:16:06.558"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20241230 00:18:06.285" endtime="20241230 00:18:06.322"/>
+<status status="PASS" starttime="20241230 23:16:06.559" endtime="20241230 23:16:06.601"/>
 </kw>
-<status status="PASS" starttime="20241230 00:18:04.553" endtime="20241230 00:18:06.322"/>
+<status status="PASS" starttime="20241230 23:16:04.735" endtime="20241230 23:16:06.601"/>
 </kw>
 <kw name="Acessar/logar a tela principal orangehrm" library="orangehrm.resources">
 <kw name="Go To" library="SeleniumLibrary">
 <arg>url=${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20241230 00:18:06.324" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
-<status status="PASS" starttime="20241230 00:18:06.324" endtime="20241230 00:18:08.264"/>
+<msg timestamp="20241230 23:16:06.607" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
+<status status="PASS" starttime="20241230 23:16:06.606" endtime="20241230 23:16:08.259"/>
 </kw>
 <kw name="Location Should Contain" library="SeleniumLibrary">
 <arg>opensource-demo.orangehrmlive.com</arg>
 <doc>Verifies that the current URL contains ``expected``.</doc>
-<msg timestamp="20241230 00:18:08.276" level="INFO">Current location contains 'opensource-demo.orangehrmlive.com'.</msg>
-<status status="PASS" starttime="20241230 00:18:08.265" endtime="20241230 00:18:08.276"/>
+<msg timestamp="20241230 23:16:08.267" level="INFO">Current location contains 'opensource-demo.orangehrmlive.com'.</msg>
+<status status="PASS" starttime="20241230 23:16:08.259" endtime="20241230 23:16:08.268"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20241230 00:18:11.277" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20241230 00:18:08.276" endtime="20241230 00:18:11.277"/>
+<msg timestamp="20241230 23:16:11.269" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20241230 23:16:08.268" endtime="20241230 23:16:11.269"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>locator=//div[@class='orangehrm-login-branding']</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20241230 00:18:11.277" endtime="20241230 00:18:11.313"/>
+<status status="PASS" starttime="20241230 23:16:11.269" endtime="20241230 23:16:11.300"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>locator=//input[contains(@name,'username')]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20241230 00:18:11.313" level="INFO">Clicking element '//input[contains(@name,'username')]'.</msg>
-<status status="PASS" starttime="20241230 00:18:11.313" endtime="20241230 00:18:11.388"/>
+<msg timestamp="20241230 23:16:11.300" level="INFO">Clicking element '//input[contains(@name,'username')]'.</msg>
+<status status="PASS" starttime="20241230 23:16:11.300" endtime="20241230 23:16:11.378"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>locator=//input[contains(@name,'username')]</arg>
 <arg>text=${USUARIO}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20241230 00:18:11.389" level="INFO">Typing text 'Admin' into text field '//input[contains(@name,'username')]'.</msg>
-<status status="PASS" starttime="20241230 00:18:11.388" endtime="20241230 00:18:11.517"/>
+<msg timestamp="20241230 23:16:11.378" level="INFO">Typing text 'Admin' into text field '//input[contains(@name,'username')]'.</msg>
+<status status="PASS" starttime="20241230 23:16:11.378" endtime="20241230 23:16:11.453"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20241230 00:18:14.519" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20241230 00:18:11.518" endtime="20241230 00:18:14.519"/>
+<msg timestamp="20241230 23:16:14.454" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20241230 23:16:11.453" endtime="20241230 23:16:14.454"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>locator=//input[contains(@type,'password')]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20241230 00:18:14.520" level="INFO">Clicking element '//input[contains(@type,'password')]'.</msg>
-<status status="PASS" starttime="20241230 00:18:14.519" endtime="20241230 00:18:14.613"/>
+<msg timestamp="20241230 23:16:14.454" level="INFO">Clicking element '//input[contains(@type,'password')]'.</msg>
+<status status="PASS" starttime="20241230 23:16:14.454" endtime="20241230 23:16:14.520"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>locator=//input[contains(@type,'password')]</arg>
 <arg>text=${SENHA}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20241230 00:18:14.614" level="INFO">Typing text 'admin123' into text field '//input[contains(@type,'password')]'.</msg>
-<status status="PASS" starttime="20241230 00:18:14.613" endtime="20241230 00:18:14.672"/>
+<msg timestamp="20241230 23:16:14.520" level="INFO">Typing text 'admin123' into text field '//input[contains(@type,'password')]'.</msg>
+<status status="PASS" starttime="20241230 23:16:14.520" endtime="20241230 23:16:14.578"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20241230 00:18:17.674" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20241230 00:18:14.672" endtime="20241230 00:18:17.674"/>
+<msg timestamp="20241230 23:16:17.578" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20241230 23:16:14.578" endtime="20241230 23:16:17.578"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>locator=//button[@type='submit'][contains(.,'Login')]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20241230 00:18:17.675" level="INFO">Clicking button '//button[@type='submit'][contains(.,'Login')]'.</msg>
-<status status="PASS" starttime="20241230 00:18:17.674" endtime="20241230 00:18:18.869"/>
+<msg timestamp="20241230 23:16:17.578" level="INFO">Clicking button '//button[@type='submit'][contains(.,'Login')]'.</msg>
+<status status="PASS" starttime="20241230 23:16:17.578" endtime="20241230 23:16:17.665"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>css=.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20241230 00:18:18.869" endtime="20241230 00:18:19.642"/>
+<status status="PASS" starttime="20241230 23:16:17.665" endtime="20241230 23:16:19.303"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20241230 00:18:22.642" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20241230 00:18:19.642" endtime="20241230 00:18:22.642"/>
+<msg timestamp="20241230 23:16:22.304" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20241230 23:16:19.303" endtime="20241230 23:16:22.304"/>
 </kw>
-<status status="PASS" starttime="20241230 00:18:06.323" endtime="20241230 00:18:22.642"/>
+<kw name="Log" library="BuiltIn">
+<arg>Tirando print da tela principal após executar o teste</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20241230 23:16:22.304" level="INFO">Tirando print da tela principal após executar o teste</msg>
+<status status="PASS" starttime="20241230 23:16:22.304" endtime="20241230 23:16:22.304"/>
 </kw>
-<kw name="Acessar somente a tela de login sem realizar login" library="orangehrm.resources">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20241230 00:18:22.645" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
-<status status="PASS" starttime="20241230 00:18:22.645" endtime="20241230 00:18:23.227"/>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>tela_de_principal_hrm.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20241230 23:16:22.471" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="tela_de_principal_hrm.png"&gt;&lt;img src="tela_de_principal_hrm.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241230 23:16:22.304" endtime="20241230 23:16:22.471"/>
 </kw>
-<kw name="Location Should Contain" library="SeleniumLibrary">
-<arg>opensource-demo.orangehrmlive.com</arg>
-<doc>Verifies that the current URL contains ``expected``.</doc>
-<msg timestamp="20241230 00:18:23.238" level="INFO">Current location contains 'opensource-demo.orangehrmlive.com'.</msg>
-<status status="PASS" starttime="20241230 00:18:23.227" endtime="20241230 00:18:23.238"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Finalizando o caso de teste 01</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20241230 23:16:22.471" endtime="20241230 23:16:22.472"/>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>css=.oxd-text.oxd-text--h5.orangehrm-login-title</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<msg timestamp="20241230 00:18:28.548" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20241230 00:18:28.549" level="FAIL">Element 'css=.oxd-text.oxd-text--h5.orangehrm-login-title' not visible after 5 seconds.</msg>
-<status status="FAIL" starttime="20241230 00:18:23.238" endtime="20241230 00:18:28.552"/>
-</kw>
-<status status="FAIL" starttime="20241230 00:18:22.644" endtime="20241230 00:18:28.552"/>
+<status status="PASS" starttime="20241230 23:16:06.605" endtime="20241230 23:16:22.472"/>
 </kw>
 <kw name="Fechar o navegador" library="orangehrm.resources" type="TEARDOWN">
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20241230 00:18:28.760" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20241230 00:18:28.554" endtime="20241230 00:18:28.760"/>
+<msg timestamp="20241230 23:16:22.621" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241230 23:16:22.472" endtime="20241230 23:16:22.621"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20241230 00:18:28.761" endtime="20241230 00:18:31.071"/>
+<status status="PASS" starttime="20241230 23:16:22.621" endtime="20241230 23:16:24.913"/>
 </kw>
-<status status="PASS" starttime="20241230 00:18:28.553" endtime="20241230 00:18:31.072"/>
+<status status="PASS" starttime="20241230 23:16:22.472" endtime="20241230 23:16:24.913"/>
 </kw>
 <doc>Teste para acessar e logar no site orangehrm.
 E somente acessar a tela de login e tela principal.</doc>
 <tag>acesso_orangehrm</tag>
-<status status="FAIL" starttime="20241230 00:18:04.551" endtime="20241230 00:18:31.074">Element 'css=.oxd-text.oxd-text--h5.orangehrm-login-title' not visible after 5 seconds.</status>
+<status status="PASS" starttime="20241230 23:16:04.734" endtime="20241230 23:16:24.915"/>
 </test>
 <doc>Essa suite testa o site da https://opensource-demo.orangehrmlive.com/</doc>
-<status status="FAIL" starttime="20241230 00:18:04.186" endtime="20241230 00:18:31.078"/>
+<status status="PASS" starttime="20241230 23:16:04.444" endtime="20241230 23:16:24.923"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">acesso_orangehrm</stat>
+<stat pass="1" fail="0" skip="0">acesso_orangehrm</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Orangehrm Teste">Orangehrm Teste</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Orangehrm Teste">Orangehrm Teste</stat>
 </suite>
 </statistics>
 <errors>

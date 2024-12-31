@@ -16,8 +16,6 @@ casos de teste 01 - Acessar/logar site orangehrm
     # [Timeout]    20
 
     Acessar/logar a tela principal orangehrm
-
-    Acessar somente a tela de login sem realizar login
  
 # Caso de teste 02 -
 Caso de teste 02 - Verificar Validação nos campos de login (Username e Password)
