@@ -21,12 +21,12 @@ casos de teste 01 - Acessar/logar site orangehrm
 Caso de teste 02 - Verificar Validação nos campos de login (Username e Password)
     [Documentation]        Teste para acessar Validar vampos de longin com informações
     ...                    inválidas.
-    [Tags]                 acesso_orangehrm_validar_campos
+    [Tags]                 acesso_orangehrm_dados_invalidos
     # [Timeout]    20
 
     #Dados inválidos: Login e senha 
-    Inserir dados invalidos no campo username sendo "teste" e password sendo "123"
-    Verificar a mensagem de alerta para dados invalidos
+    Inserir dados inválidos no username sendo "teste" e password sendo "123"
+    Treinando IF/ELSE
 
 Caso de testes 03 - Realizar o login de acesso 
     [Documentation]        Teste para realizar o login e acessar a tela principal do OrangeHRM

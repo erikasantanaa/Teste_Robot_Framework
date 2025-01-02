@@ -5,18 +5,19 @@ Library     SeleniumLibrary
 *** Variables ***
 ${BROWSER}      chrome
 ${URL}          https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
-${TELA_LOGIN}    //div[@class='orangehrm-login-branding']
 ${STATUS}   ${0}
 
 ${USUARIO}     Admin
 ${SENHA}       admin123
 
-
 @{DADO_USUARIO}    Testando
 
-
 #Login inválido
-${ERROR_MESSAGE}    //p[contains(.,'Invalid credentials')]
+${ERROR_MESSAGE}      //p[contains(.,'Invalid credentials')]
+
+${IMG_ORANGE}        .orangehrm-login-branding
+
+
 
 *** Keywords ***
 Abrir o navegador
@@ -54,26 +55,37 @@ Acessar/logar a tela principal orangehrm
     #Log no console
     Log To Console    Finalizando o caso de teste 01
 
-
-
-
-
-
 #---------------------------------------------------------------------
 # Casos de teste 02 - Validar campos de login com dados Inválidos
     #ESTUDOS: Validar os campos com dados inválidos com variáveis local:
 Inserir dados inválidos no username sendo "${USERNAME}" e password sendo "${PASSWORD}"
     
-
+    Go To    url=${URL}
+    Location Should Contain    opensource-demo.orangehrmlive.com
+    Sleep    3
     Wait Until Element Is Visible    locator=//div[@class='orangehrm-login-branding']
     Click Element    locator=//input[contains(@name,'username')]
     Input Text    locator=//input[contains(@name,'username')]   text=${USERNAME}
+    Log    Inserindo login inválido "Teste"
 
     Click Element    locator=//input[contains(@type,'password')]
     Input Text    locator=//input[contains(@type,'password')]   text=${PASSWORD}
+    Log    Inserindo password inválido "123"
 
     Click Button    locator=//button[@type='submit'][contains(.,'Login')]
     Wait Until Element Is Visible    locator=${ERROR_MESSAGE}
+    Log    Realizando a validação da mensagem de erro ao inserir dados inválidos
+
+# Treinando IF/ELSE
+#     IF ${IMG_ORANGE} === .orangehrm-login-branding
+#     Logar informações quando a mensagem for igual a Teste
+#     Log    message=Aqui a mesagem corresponde a Teste    console=True
+
+
+# Logar informações quando a mensagem for igual a Teste
+#     Log    A mensagem ${IMG_ORANGE} de erro é Teste
+#     Log To Console    A mensagem ${IMG_ORANGE} de erro é Teste
+    
 
 
 # Casos de testes 03 - Realizar o cadastro de usuário do sistema - OrangeHRM

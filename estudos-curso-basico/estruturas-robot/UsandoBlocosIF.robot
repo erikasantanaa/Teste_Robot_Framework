@@ -5,11 +5,11 @@ Test Teardown   Log To Console    ${\n}
 
 
 *** Variables ***
-${STATUS}   ${0}
+${STATUS}   ${10}
 
 
 *** Test Case ***
-01: Exemplo bloco IF
+01: Exemplo bloco IF 
     IF  ${STATUS} > 0
         Logar informações quando o status for maior que zero
         Log  message=Aqui executei um bloco de IF simples, pois a condição dada é VERDADEIRA!!!!  console=True
@@ -43,6 +43,7 @@ ${STATUS}   ${0}
     END
 
 *** Keywords ***
+#Informações de logs 
 Logar informações quando o status for maior que zero
     Log   O STATUS [${STATUS}] é maior que zero!
     Log To Console    O STATUS [${STATUS}] é maior que zero!
