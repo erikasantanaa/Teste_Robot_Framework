@@ -80,20 +80,27 @@ Inserir dados inválidos no username sendo "${USERNAME}" e password sendo "${PAS
 #---------------------------------------------------------------------
 # Caso de teste 03 - Pesquisar por usuário 
 Seleciono o campo Admin
-    Wait Until Element Is Visible    locator=//a[@class='oxd-main-menu-item active']
-    Click Element    locator=//a[@class='oxd-main-menu-item active']
+    Wait Until Element Is Visible    locator=//span[normalize-space()='Admin']
+    Click Element    locator=//span[normalize-space()='Admin']
+    Wait Until Element Is Visible    locator=//div[@class='oxd-topbar-header-title']
+    Sleep    2
+
+    Log     Tirando print da tela após clicar no campo Admin
+    Capture Page Screenshot      tela_de_principal_hrm.png
+
 
 Preencher o campo Username sendo "${USER_NAME}" no formulário System Users 
     Wait Until Element Is Visible    locator=//label[normalize-space()='Username']
-    Wait Until Element Is Visible    locator=//input[@class='oxd-input oxd-input--focus']
+    Wait Until Element Is Visible    locator=//div[@class='oxd-input-group oxd-input-field-bottom-space']//div//input[@class='oxd-input oxd-input--active']
 
-    Input Text    locator=//input[@class='oxd-input oxd-input--focus']    text=${USER_NAME}
+    Input Text    locator=//div[@class='oxd-input-group oxd-input-field-bottom-space']//div//input[@class='oxd-input oxd-input--active']    text=${USER_NAME}
 
 Selecionar o campo User role sendo "ESS" no formulário System Users 
     Wait Until Element Is Visible    locator=(//div[@class='oxd-input-group__label-wrapper'])[2]
     Wait Until Element Is Visible    locator=(//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[1]
 
     Click Element    locator=(//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[1]
+    Click Element    locator=//div[@class='oxd-select-text-input'][normalize-space()='ESS']
 
 
     Log     Tirando print da tela após inserir informações no formulário
