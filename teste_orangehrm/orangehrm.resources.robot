@@ -36,21 +36,17 @@ Acessar/logar a tela principal orangehrm
 
     Go To    url=${URL}
     Location Should Contain    opensource-demo.orangehrmlive.com
-    Sleep    3
     Wait Until Element Is Visible    locator=//div[@class='orangehrm-login-branding']
     Click Element    locator=//input[contains(@name,'username')]
     Input Text    locator=//input[contains(@name,'username')]   text=${USUARIO}
-    Sleep    3
     Click Element    locator=//input[contains(@type,'password')]
     Input Text    locator=//input[contains(@type,'password')]   text=${SENHA}
-    Sleep    3
+
+    Log     Tirando print da tela após inserir login e senha
+    Capture Page Screenshot      tela_de_principal_hrm.png
+
     Click Button    locator=//button[@type='submit'][contains(.,'Login')]
     Wait Until Element Is Visible    css=.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module
-    Sleep    3
-
-    #Nos testes web, podemos logar Screenshot com a SeleniumLibrary
-    Log     Tirando print da tela principal após executar o teste
-    Capture Page Screenshot      tela_de_principal_hrm.png
 
     #Log no console
     Log To Console    Finalizando o caso de teste 01
@@ -62,7 +58,7 @@ Inserir dados inválidos no username sendo "${USERNAME}" e password sendo "${PAS
     
     Go To    url=${URL}
     Location Should Contain    opensource-demo.orangehrmlive.com
-    Sleep    3
+
     Wait Until Element Is Visible    locator=//div[@class='orangehrm-login-branding']
     Click Element    locator=//input[contains(@name,'username')]
     Input Text    locator=//input[contains(@name,'username')]   text=${USERNAME}
@@ -70,37 +66,35 @@ Inserir dados inválidos no username sendo "${USERNAME}" e password sendo "${PAS
 
     Click Element    locator=//input[contains(@type,'password')]
     Input Text    locator=//input[contains(@type,'password')]   text=${PASSWORD}
+    
+    Log     Tirando print da tela após inserir login e senha
+    Capture Page Screenshot      tela_de_principal_hrm.png
+
     Log    Inserindo password inválido "123"
 
     Click Button    locator=//button[@type='submit'][contains(.,'Login')]
     Wait Until Element Is Visible    locator=${ERROR_MESSAGE}
     Log    Realizando a validação da mensagem de erro ao inserir dados inválidos
-
-# Treinando IF/ELSE
-#     IF ${IMG_ORANGE} === .orangehrm-login-branding
-#     Logar informações quando a mensagem for igual a Teste
-#     Log    message=Aqui a mesagem corresponde a Teste    console=True
-
-
-# Logar informações quando a mensagem for igual a Teste
-#     Log    A mensagem ${IMG_ORANGE} de erro é Teste
-#     Log To Console    A mensagem ${IMG_ORANGE} de erro é Teste
     
 
+#---------------------------------------------------------------------
+# Caso de teste 03 - Pesquisar por usuário 
+Seleciono o campo Admin
+    Wait Until Element Is Visible    locator=//a[@class='oxd-main-menu-item active']
+    Click Element    locator=//a[@class='oxd-main-menu-item active']
 
-# Casos de testes 03 - Realizar o cadastro de usuário do sistema - OrangeHRM
-Cadastrar novo usuário no sistema OrangeHRM
-    #Criar dados do usuário com tipo de variável (Dicionário chave-valor)
-    Acessar/logar a tela principal orangehrm
-    
-    Wait Until Element Is Visible    locator=//a[contains(.,'Admin')]
-    Click Element    locator=//a[contains(.,'Admin')]
-    Wait Until Element Is Visible    locator=//div[contains(@class,'oxd-topbar-header-title')]
+Preencher o campo Username sendo "${USER_NAME}" no formulário System Users 
+    Wait Until Element Is Visible    locator=//label[normalize-space()='Username']
+    Wait Until Element Is Visible    locator=//input[@class='oxd-input oxd-input--focus']
 
-    #inserindo e selecionando dados do usuário para o cadastro
-    Wait Until Element Is Visible    locator=(//input[contains(@class,'oxd-input oxd-input--active')])[2]
-    Input Text    locator=(//input[contains(@class,'oxd-input oxd-input--active')])[2]    text=@{DADO_USUARIO}
+    Input Text    locator=//input[@class='oxd-input oxd-input--focus']    text=${USER_NAME}
 
-    Wait Until Element Is Visible    locator=//div[@class='oxd-input-group__label-wrapper'][contains(.,'User Role')]
-    Click Element    locator=(//div[contains(@class,'oxd-select-text--after')])[1]
-    Click Element    locator=//div[@class='oxd-select-text-input'][contains(.,'ESS')]
+Selecionar o campo User role sendo "ESS" no formulário System Users 
+    Wait Until Element Is Visible    locator=(//div[@class='oxd-input-group__label-wrapper'])[2]
+    Wait Until Element Is Visible    locator=(//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[1]
+
+    Click Element    locator=(//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[1]
+
+
+    Log     Tirando print da tela após inserir informações no formulário
+    Capture Page Screenshot      tela_de_principal_hrm.png

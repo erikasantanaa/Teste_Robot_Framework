@@ -1,5 +1,5 @@
 # OBS: Para rodar loops no terminal, ex: robot -t "Teste de REPEAT KEYWORD" .\estruturas-robot\UsandoLoops.robot
-
+#Ele é útil para tarefas repetitivas, como executar as mesmas ações com diferentes dados ou em diferentes elementos.
 *** Settings ***
 Documentation   Vamos aprender a fazer LOOPS usando o Robot Framework!!
 
@@ -35,6 +35,7 @@ Usando Repeat keyword
 
 Usando FOR IN RANGE
     # OBS: O ultimo numero o robot nao conta: 5
+    #OBS: Adicionando o n° 2 após o 5, o sistema conta de 2 em 2
     Log To Console  ${\n}
     FOR  ${CONTADOR}   IN RANGE  0   5   
         Log To Console    Minha posição agora é: ${CONTADOR}
