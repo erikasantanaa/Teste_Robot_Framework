@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    ../resources/api_testing_usuarios_resource.robot
+Resource    api_testing_usuarios_resources.robot
 
 *** Variables ***
 

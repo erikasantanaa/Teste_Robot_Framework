@@ -37,9 +37,9 @@ Cadastrar o usuário criado na ServeRest
     #variavel global
     # OBS: ERRO no IF, verificar
     Log    ${resposta.json()}
-    
-    IF    ${resposta.status_code}  ===  201        
-        Set Test Variable    ${ID_USUARIO}    ${resposta.json()["_id"]}
+
+    IF  ${resposta.status_code} == 201
+        Set Test Variable    ${ID_USUARIO}  ${resposta.json()["_id"]}
     END
 
     Set Test Variable    ${RESPOSTA}    ${resposta.json()}
