@@ -94,16 +94,6 @@ Inserir dados inválidos no username sendo "${USERNAME}" e password sendo "${PAS
     Run Keyword If    '${erro_mensagem}' == 'Invalid credentials'    
     ...    Log    Usuário inválido detectado
     ...    ELSE    Log    Usuário inválido não detectado
-
-    # Log    Verificando conteúdo da mensagem de erro
-    # ${teste}    Set Variable    ${ERROR_MESSAGE} 
-
-    # IF    $teste == 'Invalid credentials'
-    #     Log    Usuário inválido detectado
-    # ELSE
-    #     Log    Usuário inválido não detectado
-    # END
-
 #---------------------------------------------------------------------
 # Caso de teste 03 - Pesquisar por usuário 
 Seleciono o campo Admin
