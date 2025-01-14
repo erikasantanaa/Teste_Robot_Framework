@@ -33,7 +33,11 @@ Acessar/logar a tela principal orangehrm
 #Organizando a estrutura das kaywords
     #ESTUDOS: Verificando resultados Variavies locail - pode ser utilizada somente na keyword em execução
     # "${USUARIO}" e "${SENHA}"
-
+    
+    FOR    ${element}    IN    @{LIST}
+        Log    ${element}
+        
+    END
     Set Selenium Timeout  50 seconds
 
     Log    Acessando a página de login
