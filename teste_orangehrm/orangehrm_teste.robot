@@ -16,8 +16,7 @@ casos de teste 01 - Acessar/logar site orangehrm
     [Timeout]    50
 
     Acessar/logar a tela principal orangehrm
- 
-# Caso de teste 02 -
+
 Caso de teste 02 - Verificar Validação nos campos de login (Username e Password)
     [Documentation]        Teste para acessar Validar vampos de longin com informações
     ...                    inválidas.
@@ -26,10 +25,6 @@ Caso de teste 02 - Verificar Validação nos campos de login (Username e Passwor
 
     #Dados inválidos: Login e senha 
     Inserir dados inválidos no username sendo "teste" e password sendo "123"
-
-
-
-    
 
 Caso de teste 03 - Pesquisar por usuário 
     [Documentation]        Teste para realizar a pesquisa de usuário

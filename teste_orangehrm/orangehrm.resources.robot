@@ -1,12 +1,10 @@
 *** Settings ***
 Library     SeleniumLibrary
 
-
 *** Variables ***
 ${BROWSER}      chrome
 ${URL}          https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
 ${URLS}    https://opensource-demo.orangehrmlive.com 
-
 
 ${USUARIO}     Admin
 ${SENHA}       admin123
@@ -16,12 +14,9 @@ ${SENHA}       admin123
 @{DADO_USUARIO}    Testando
 
 #Login inválido
-${ERROR_MESSAGE}      //p[contains(.,'Invalid credentials')]
-${ERROR_MESSAGE_ERROR}    Invalid credentials
+${ERROR_MESSAGE}      //div[@class='oxd-alert-content oxd-alert-content--error']
 
 ${IMG_ORANGE}        .orangehrm-login-branding
-
-
 
 *** Keywords ***
 Abrir o navegador
@@ -35,35 +30,45 @@ Fechar o navegador
 
 #caso de teste 01 - Acessar/logar site orangehrm
 Acessar/logar a tela principal orangehrm
-        #ESTUDOS: Verificando resultados Variavies locail - pode ser utilizada somente na keyword em execução
-        # "${USUARIO}" e "${SENHA}"
-        Set Selenium Timeout  50 seconds
-        Go To    url=${URL}
-        Location Should Contain    opensource-demo.orangehrmlive.com
-        Wait Until Element Is Visible    locator=//div[@class='orangehrm-login-branding']
-        Click Element    locator=//input[contains(@name,'username')]
-        Input Text    locator=//input[contains(@name,'username')]   text=${USUARIO}
-        Click Element    locator=//input[contains(@type,'password')]
-        Input Text    locator=//input[contains(@type,'password')]   text=${SENHA}
+#Organizando a estrutura das kaywords
+    #ESTUDOS: Verificando resultados Variavies locail - pode ser utilizada somente na keyword em execução
+    # "${USUARIO}" e "${SENHA}"
 
-        Log     Tirando print da tela após inserir login e senha
-        Capture Page Screenshot      tela_de_principal_hrm.png
+    Set Selenium Timeout  50 seconds
 
-        Click Button    locator=//button[@type='submit'][contains(.,'Login')]
-        Wait Until Element Is Visible    css=.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module
+    Log    Acessando a página de login
+    Go To    url=${URL}
+    Location Should Contain    opensource-demo.orangehrmlive.com
+    Wait Until Element Is Visible    locator=//div[@class='orangehrm-login-branding']
 
-        #Log no console
-        Log To Console    Finalizando o caso de teste 01
+    Log    Inserindo login válido
+    Click Element    locator=//input[contains(@name,'username')]
+    Input Text    locator=//input[contains(@name,'username')]   text=${USUARIO}
+    Click Element    locator=//input[contains(@type,'password')]
+    Input Text    locator=//input[contains(@type,'password')]   text=${SENHA}
+
+    Log     Tirando print da tela após inserir login e senha
+    Capture Page Screenshot      tela_de_principal_hrm.png
+        
+    Log    Logando na página inicial
+    Click Button    locator=//button[@type='submit'][contains(.,'Login')]
+    Wait Until Element Is Visible    css=.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module
+
+    #Log no console
+    Log To Console    Finalizando o caso de teste 01
 
 
 #---------------------------------------------------------------------
 # Casos de teste 02 - Validar campos de login com dados Inválidos
     #ESTUDOS: Validar os campos com dados inválidos com variáveis local:
 Inserir dados inválidos no username sendo "${USERNAME}" e password sendo "${PASSWORD}"
-    
+#Organizando a estrutura das kaywords
+
+    Log    Acessando a página de login
     Go To    url=${URL}
     Location Should Contain    opensource-demo.orangehrmlive.com
 
+    Log    Inserindo login inválido
     Wait Until Element Is Visible    locator=//div[@class='orangehrm-login-branding']
     Click Element    locator=//input[contains(@name,'username')]
     Input Text    locator=//input[contains(@name,'username')]   text=${USERNAME}
@@ -75,19 +80,29 @@ Inserir dados inválidos no username sendo "${USERNAME}" e password sendo "${PAS
     Log     Tirando print da tela após inserir login e senha
     Capture Page Screenshot      tela_de_principal_hrm.png
 
-    Log    Inserindo password inválido "123"
-
+    Log    Logando com dados inválidos
     Click Button    locator=//button[normalize-space()='Login']
+
+    Log    Validando exibição da mensagem de erro
     Wait Until Element Is Visible    locator=${ERROR_MESSAGE}
-    Log    Realizando a validação da mensagem de erro ao inserir dados inválidos
     
-#Realizando 
-    ${teste}    Set Variable    ${ERROR_MESSAGE_ERROR} 
-    IF    $teste == 'Invalid credentials'
-        Log    Usuário inválido detectado
-    ELSE
-        Log    Usuário válido
-    END
+    Log    captura o texto exibido pela mensagem de erro.
+    ${erro_mensagem}    Get Text    locator=${ERROR_MESSAGE}
+
+#Utilizando condição IF/ELSE
+    Log    Verificando conteúdo da mensagem de erro
+    Run Keyword If    '${erro_mensagem}' == 'Invalid credentials'    
+    ...    Log    Usuário inválido detectado
+    ...    ELSE    Log    Usuário inválido não detectado
+
+    # Log    Verificando conteúdo da mensagem de erro
+    # ${teste}    Set Variable    ${ERROR_MESSAGE} 
+
+    # IF    $teste == 'Invalid credentials'
+    #     Log    Usuário inválido detectado
+    # ELSE
+    #     Log    Usuário inválido não detectado
+    # END
 
 #---------------------------------------------------------------------
 # Caso de teste 03 - Pesquisar por usuário 
