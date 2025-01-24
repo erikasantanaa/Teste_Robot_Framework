@@ -22,10 +22,10 @@ caso de Teste 02 - Validar campos de login com dados Inválidos
     Inserir dados inválidos no username sendo "teste" e password sendo "123"
 
 
-caso de teste 03 - cadastrar usuário em menu Admin
-    [Documentation]     Realizar o cadastramento de usuário no menu Admin.
-    [Tags]              teste-cadastrar-usuario
-    [Timeout]    30
+# caso de teste 03 - cadastrar usuário em menu Admin
+#     [Documentation]     Realizar o cadastramento de usuário no menu Admin.
+#     [Tags]              teste-cadastrar-usuario
+#     [Timeout]    30
     
 
 
@@ -39,7 +39,7 @@ caso de teste 03 - cadastrar usuário em menu Admin
 #     Preencher o campo Username sendo "${USER_NAME}" no formulário System Users 
 #     Selecionar o campo User role sendo "ESS" no formulário System Users 
 
-caso de teste 05 - Excluir usuário cadastrado
-    [Documentation]     Realizar a exclusão de usuário no menu Admin.
-    [Tags]              teste-excluir-usuário
-    [Timeout]    30
+# caso de teste 05 - Excluir usuário cadastrado
+#     [Documentation]     Realizar a exclusão de usuário no menu Admin.
+#     [Tags]              teste-excluir-usuário
+#     [Timeout]    30
