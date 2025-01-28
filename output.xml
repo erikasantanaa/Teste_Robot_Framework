@@ -1,80 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20250128 09:41:15.594" rpa="false" schemaversion="4">
-<suite id="s1" name="For" source="c:\Users\Erika Santana\Desktop\robot-basico-avancado-teste-orange\estudos-curso-avancado\builtln-avancado\for.robot">
-<test id="s1-t1" name="Teste FOR usando várias váriaveis" line="11">
-<kw name="Cria dicionário de traduções">
-<for flavor="IN">
-<var>${index}</var>
-<var>${english}</var>
-<var>${finnish}</var>
-<var>${portugues}</var>
-<value>1</value>
-<value>cat</value>
-<value>kissa</value>
-<value>gato</value>
-<value>2</value>
-<value>dog</value>
-<value>koira</value>
-<value>cachorro</value>
-<value>3</value>
-<value>horse</value>
-<value>hevonen</value>
-<value>cavalo</value>
-<iter>
-<var name="${index}">1</var>
-<var name="${english}">cat</var>
-<var name="${finnish}">kissa</var>
-<var name="${portugues}">gato</var>
-<kw name="Log" library="BuiltIn">
-<arg>Animal ${index}:\nEm inglês: ${english}\nEm finlandês: ${finnish}\nEm português: ${portugues}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250128 09:41:15.643" level="INFO">Animal 1:
-Em inglês: cat
-Em finlandês: kissa
-Em português: gato</msg>
-<status status="PASS" starttime="20250128 09:41:15.642" endtime="20250128 09:41:15.646"/>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20250128 18:21:38.776" rpa="false" schemaversion="4">
+<suite id="s1" name="Process" source="c:\Users\Erika Santana\Desktop\robot-basico-avancado-teste-orange\estudos-curso-avancado\libraries-auxiliares\Process\process.robot">
+<test id="s1-t1" name="Exemplo 01: Abrindo programas" line="8">
+<kw name="Abra e feche o Notepad">
+<kw name="Start Process" library="Process">
+<var>${MEU_PROCESSO}</var>
+<arg>C:\\WINDOWS\\system32\\notepad.exe</arg>
+<doc>Starts a new process on background.</doc>
+<msg timestamp="20250128 18:21:38.835" level="INFO">Starting process:
+C:\WINDOWS\system32\notepad.exe</msg>
+<msg timestamp="20250128 18:21:38.858" level="INFO">${MEU_PROCESSO} = &lt;Popen: returncode: None args: ['C:\\WINDOWS\\system32\\notepad.exe']&gt;</msg>
+<status status="PASS" starttime="20250128 18:21:38.835" endtime="20250128 18:21:38.859"/>
 </kw>
-<status status="PASS" starttime="20250128 09:41:15.642" endtime="20250128 09:41:15.646"/>
-</iter>
-<iter>
-<var name="${index}">2</var>
-<var name="${english}">dog</var>
-<var name="${finnish}">koira</var>
-<var name="${portugues}">cachorro</var>
-<kw name="Log" library="BuiltIn">
-<arg>Animal ${index}:\nEm inglês: ${english}\nEm finlandês: ${finnish}\nEm português: ${portugues}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250128 09:41:15.647" level="INFO">Animal 2:
-Em inglês: dog
-Em finlandês: koira
-Em português: cachorro</msg>
-<status status="PASS" starttime="20250128 09:41:15.647" endtime="20250128 09:41:15.648"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20250128 18:21:41.861" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20250128 18:21:38.859" endtime="20250128 18:21:41.861"/>
 </kw>
-<status status="PASS" starttime="20250128 09:41:15.646" endtime="20250128 09:41:15.648"/>
-</iter>
-<iter>
-<var name="${index}">3</var>
-<var name="${english}">horse</var>
-<var name="${finnish}">hevonen</var>
-<var name="${portugues}">cavalo</var>
-<kw name="Log" library="BuiltIn">
-<arg>Animal ${index}:\nEm inglês: ${english}\nEm finlandês: ${finnish}\nEm português: ${portugues}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250128 09:41:15.649" level="INFO">Animal 3:
-Em inglês: horse
-Em finlandês: hevonen
-Em português: cavalo</msg>
-<status status="PASS" starttime="20250128 09:41:15.648" endtime="20250128 09:41:15.649"/>
+<kw name="Terminate Process" library="Process">
+<arg>${MEU_PROCESSO}</arg>
+<arg>kill=True</arg>
+<doc>Stops the process gracefully or forcefully.</doc>
+<msg timestamp="20250128 18:21:41.863" level="INFO">Forcefully killing process.</msg>
+<msg timestamp="20250128 18:21:41.966" level="INFO">Process completed.</msg>
+<status status="PASS" starttime="20250128 18:21:41.861" endtime="20250128 18:21:41.968"/>
 </kw>
-<status status="PASS" starttime="20250128 09:41:15.648" endtime="20250128 09:41:15.649"/>
-</iter>
-<status status="PASS" starttime="20250128 09:41:15.641" endtime="20250128 09:41:15.649"/>
-</for>
-<status status="PASS" starttime="20250128 09:41:15.641" endtime="20250128 09:41:15.650"/>
+<status status="PASS" starttime="20250128 18:21:38.834" endtime="20250128 18:21:41.968"/>
 </kw>
-<status status="PASS" starttime="20250128 09:41:15.634" endtime="20250128 09:41:15.651"/>
+<status status="PASS" starttime="20250128 18:21:38.834" endtime="20250128 18:21:41.969"/>
 </test>
-<status status="PASS" starttime="20250128 09:41:15.601" endtime="20250128 09:41:15.656"/>
+<doc>http://robotframework.org/robotframework/latest/libraries/Process.html</doc>
+<status status="PASS" starttime="20250128 18:21:38.789" endtime="20250128 18:21:41.973"/>
 </suite>
 <statistics>
 <total>
@@ -83,7 +40,7 @@ Em português: cavalo</msg>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="For">For</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Process">Process</stat>
 </suite>
 </statistics>
 <errors>
