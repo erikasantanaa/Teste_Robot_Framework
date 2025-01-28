@@ -38,3 +38,10 @@ Teste Criando os dois
     ### REGRA: a lista vem primeiro
     [Arguments]     @{minha_lista}  &{meu_dicionario}
     Log    ${minha_lista}\n${meu_dicionario}
+
+# Resumo
+# Argumentos Posicionais: A ordem importa.
+
+# Argumentos Nomeados: A ordem não importa, desde que você especifique o nome do argumento.
+
+# Argumentos Variáveis: Permitem passar um número variável de argumentos.

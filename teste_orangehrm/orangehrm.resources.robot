@@ -48,6 +48,9 @@ Acessar/logar a tela principal orangehrm
     Click Button    locator=//button[@type='submit'][contains(.,'Login')]
     Wait Until Element Is Visible    css=.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module
 
+    Log     Tirando print da tela após logar
+    Capture Page Screenshot      tela_de_principal_hrm.png
+
     #Log no console
     Log To Console    Finalizando o caso de teste 01
     
@@ -61,29 +64,29 @@ Inserir dados inválidos no username sendo "${USERNAME}" e password sendo "${PAS
     Location Should Contain    opensource-demo.orangehrmlive.com
 
     Wait Until Element Is Visible    locator=//div[@class='orangehrm-login-branding']
+
+    Log    Inserindo login inválido "Teste"
     Click Element    locator=//input[contains(@name,'username')]
     Input Text    locator=//input[contains(@name,'username')]   text=${USERNAME}
-    Log    Inserindo login inválido "Teste"
 
+    Log    Inserindo password inválido "123"
     Click Element    locator=//input[contains(@type,'password')]
     Input Text    locator=//input[contains(@type,'password')]   text=${PASSWORD}
     
-    Log     Tirando print da tela após inserir login e senha
-    Capture Page Screenshot      tela_de_principal_hrm.png
-
-    Log    Inserindo password inválido "123"
-
+    Log    Realizando a validação da mensagem de erro ao inserir dados inválidos
     Click Button    locator=//button[@type='submit'][contains(.,'Login')]
     Wait Until Element Is Visible    locator=${ERROR_MESSAGE}
-    Log    Realizando a validação da mensagem de erro ao inserir dados inválidos
     
-
+    Log     Tirando print da tela após inserir login e senha
+    Capture Page Screenshot      tela_de_principal_hrm.png
 
 
 #---------------------------------------------------------------------
 
 #Caso de teste 03 - Cadastrar usuário em menu Admin
 
+
+FAZEEEER
 
 
 #---------------------------------------------------------------------

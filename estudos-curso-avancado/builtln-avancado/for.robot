@@ -1,3 +1,6 @@
+#O FOR mudou , essa e a nova versão, segundo o curso em 2018
+#Serve para percorrer listas
+
 *** Test Cases ***
 Teste do novo formato do FOR
     # Velho formato do FOR de listas
@@ -19,9 +22,8 @@ Teste mais opções IN RANGE
     Intervalos específicos
 
 *** Keywords ***
-# ## NOVO FORMATO
-
-# Velho formato do FOR de listas
+# ##                                        NOVO FORMATO
+# Velho formato do FOR de listas ( Já foi retirado do robot)
 #     :FOR    ${animal}    IN    gato    cachorro    cavalo
 #     \    Log    O animal desse laço é: ${animal}!
 #     \    Log    Vamos para o próximo animal da lista...
@@ -46,7 +48,8 @@ Imprime tamanhos para o produto
         Log    Produto: ${produto} - Tam: ${tamanho}
     END
 
-### Usando várias variáveis
+### Usando várias variáveis (Várias listas)
+#Organizado tipo uma tabela
 Cria dicionário de traduções
     FOR    ${index}    ${english}    ${finnish}    ${portugues}   IN
     ...     1           cat           kissa         gato
@@ -75,6 +78,7 @@ Apenas quantidade de laços informada (limite superior)
     END
 
 Aritmético
+#OBS: QUANDO EU PRECISO PASSAR UM VALOR NÚMERICO A SINTAXE PARA O ROBOT RECONHECER É: ${5}
     [Documentation]    Percorre de 0 até 5
     ${var}   Set Variable    ${5}
     FOR    ${index}    IN RANGE    ${var} + 1
@@ -82,6 +86,7 @@ Aritmético
     END
 
 Intervalos específicos
+#obs: PARA PULAR DE 5 EM 5 O VALOR NÚMERICO
     [Documentation]    Percorre de 0 até 30, pulando de 5 em 5
     FOR    ${index}    IN RANGE    0    31    5
         Log    ${index}

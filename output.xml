@@ -1,198 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20250120 19:13:23.416" rpa="false" schemaversion="4">
-<suite id="s1" name="Orangehrm Teste" source="c:\Users\Erika Santana\Desktop\robot-basico-teste-orange\teste_orangehrm\orangehrm_teste.robot">
-<test id="s1-t1" name="casos de teste 01 - Acessar/logar site orangehrm" line="14">
-<kw name="Abrir o navegador" library="orangehrm.resources" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20250120 19:13:23.766" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20250120 19:13:23.765" endtime="20250120 19:13:25.458"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20250120 19:13:25.458" endtime="20250120 19:13:25.517"/>
-</kw>
-<status status="PASS" starttime="20250120 19:13:23.765" endtime="20250120 19:13:25.518"/>
-</kw>
-<kw name="Acessar/logar a tela principal orangehrm" library="orangehrm.resources">
-<kw name="Set Selenium Timeout" library="SeleniumLibrary">
-<arg>50 seconds</arg>
-<doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" starttime="20250120 19:13:25.521" endtime="20250120 19:13:25.533"/>
-</kw>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20250128 09:41:15.594" rpa="false" schemaversion="4">
+<suite id="s1" name="For" source="c:\Users\Erika Santana\Desktop\robot-basico-avancado-teste-orange\estudos-curso-avancado\builtln-avancado\for.robot">
+<test id="s1-t1" name="Teste FOR usando várias váriaveis" line="11">
+<kw name="Cria dicionário de traduções">
+<for flavor="IN">
+<var>${index}</var>
+<var>${english}</var>
+<var>${finnish}</var>
+<var>${portugues}</var>
+<value>1</value>
+<value>cat</value>
+<value>kissa</value>
+<value>gato</value>
+<value>2</value>
+<value>dog</value>
+<value>koira</value>
+<value>cachorro</value>
+<value>3</value>
+<value>horse</value>
+<value>hevonen</value>
+<value>cavalo</value>
+<iter>
+<var name="${index}">1</var>
+<var name="${english}">cat</var>
+<var name="${finnish}">kissa</var>
+<var name="${portugues}">gato</var>
 <kw name="Log" library="BuiltIn">
-<arg>Acessando a página de login</arg>
+<arg>Animal ${index}:\nEm inglês: ${english}\nEm finlandês: ${finnish}\nEm português: ${portugues}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250120 19:13:25.536" level="INFO">Acessando a página de login</msg>
-<status status="PASS" starttime="20250120 19:13:25.533" endtime="20250120 19:13:25.536"/>
+<msg timestamp="20250128 09:41:15.643" level="INFO">Animal 1:
+Em inglês: cat
+Em finlandês: kissa
+Em português: gato</msg>
+<status status="PASS" starttime="20250128 09:41:15.642" endtime="20250128 09:41:15.646"/>
 </kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20250120 19:13:25.567" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'</msg>
-<status status="PASS" starttime="20250120 19:13:25.537" endtime="20250120 19:13:27.268"/>
-</kw>
-<kw name="Location Should Contain" library="SeleniumLibrary">
-<arg>opensource-demo.orangehrmlive.com</arg>
-<doc>Verifies that the current URL contains ``expected``.</doc>
-<msg timestamp="20250120 19:13:27.278" level="INFO">Current location contains 'opensource-demo.orangehrmlive.com'.</msg>
-<status status="PASS" starttime="20250120 19:13:27.268" endtime="20250120 19:13:27.279"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>locator=//div[@class='orangehrm-login-branding']</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20250120 19:13:27.279" endtime="20250120 19:13:27.744"/>
-</kw>
+<status status="PASS" starttime="20250128 09:41:15.642" endtime="20250128 09:41:15.646"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<var name="${english}">dog</var>
+<var name="${finnish}">koira</var>
+<var name="${portugues}">cachorro</var>
 <kw name="Log" library="BuiltIn">
-<arg>Inserindo login válido</arg>
+<arg>Animal ${index}:\nEm inglês: ${english}\nEm finlandês: ${finnish}\nEm português: ${portugues}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250120 19:13:27.745" level="INFO">Inserindo login válido</msg>
-<status status="PASS" starttime="20250120 19:13:27.745" endtime="20250120 19:13:27.746"/>
+<msg timestamp="20250128 09:41:15.647" level="INFO">Animal 2:
+Em inglês: dog
+Em finlandês: koira
+Em português: cachorro</msg>
+<status status="PASS" starttime="20250128 09:41:15.647" endtime="20250128 09:41:15.648"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>locator=//input[contains(@name,'username')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20250120 19:13:27.748" level="INFO">Clicking element '//input[contains(@name,'username')]'.</msg>
-<status status="PASS" starttime="20250120 19:13:27.747" endtime="20250120 19:13:27.870"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>locator=//input[contains(@name,'username')]</arg>
-<arg>text=${USUARIO}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20250120 19:13:27.872" level="INFO">Typing text 'Admin' into text field '//input[contains(@name,'username')]'.</msg>
-<status status="PASS" starttime="20250120 19:13:27.870" endtime="20250120 19:13:27.995"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>locator=//input[contains(@type,'password')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20250120 19:13:27.996" level="INFO">Clicking element '//input[contains(@type,'password')]'.</msg>
-<status status="PASS" starttime="20250120 19:13:27.995" endtime="20250120 19:13:28.072"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>locator=//input[contains(@type,'password')]</arg>
-<arg>text=${SENHA}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20250120 19:13:28.073" level="INFO">Typing text 'admin123' into text field '//input[contains(@type,'password')]'.</msg>
-<status status="PASS" starttime="20250120 19:13:28.072" endtime="20250120 19:13:28.141"/>
-</kw>
+<status status="PASS" starttime="20250128 09:41:15.646" endtime="20250128 09:41:15.648"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<var name="${english}">horse</var>
+<var name="${finnish}">hevonen</var>
+<var name="${portugues}">cavalo</var>
 <kw name="Log" library="BuiltIn">
-<arg>Tirando print da tela após inserir login e senha</arg>
+<arg>Animal ${index}:\nEm inglês: ${english}\nEm finlandês: ${finnish}\nEm português: ${portugues}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250120 19:13:28.141" level="INFO">Tirando print da tela após inserir login e senha</msg>
-<status status="PASS" starttime="20250120 19:13:28.141" endtime="20250120 19:13:28.142"/>
+<msg timestamp="20250128 09:41:15.649" level="INFO">Animal 3:
+Em inglês: horse
+Em finlandês: hevonen
+Em português: cavalo</msg>
+<status status="PASS" starttime="20250128 09:41:15.648" endtime="20250128 09:41:15.649"/>
 </kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>tela_de_principal_hrm.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20250120 19:13:28.282" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="tela_de_principal_hrm.png"&gt;&lt;img src="tela_de_principal_hrm.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20250120 19:13:28.142" endtime="20250120 19:13:28.282"/>
+<status status="PASS" starttime="20250128 09:41:15.648" endtime="20250128 09:41:15.649"/>
+</iter>
+<status status="PASS" starttime="20250128 09:41:15.641" endtime="20250128 09:41:15.649"/>
+</for>
+<status status="PASS" starttime="20250128 09:41:15.641" endtime="20250128 09:41:15.650"/>
 </kw>
-<kw name="Log" library="BuiltIn">
-<arg>Logando na página inicial</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250120 19:13:28.284" level="INFO">Logando na página inicial</msg>
-<status status="PASS" starttime="20250120 19:13:28.282" endtime="20250120 19:13:28.284"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>locator=//button[@type='submit'][contains(.,'Login')]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20250120 19:13:28.287" level="INFO">Clicking button '//button[@type='submit'][contains(.,'Login')]'.</msg>
-<status status="PASS" starttime="20250120 19:13:28.285" endtime="20250120 19:13:28.395"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>css=.oxd-text.oxd-text--h6.oxd-topbar-header-breadcrumb-module</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20250120 19:13:28.395" endtime="20250120 19:13:29.501"/>
-</kw>
-<status status="PASS" starttime="20250120 19:13:25.520" endtime="20250120 19:13:29.501"/>
-</kw>
-<kw name="Selecionar o campo Admin" library="orangehrm.resources">
-<kw name="Log" library="BuiltIn">
-<arg>Acessando o campo Admin</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250120 19:13:29.503" level="INFO">Acessando o campo Admin</msg>
-<status status="PASS" starttime="20250120 19:13:29.502" endtime="20250120 19:13:29.503"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>locator=//span[normalize-space()='Admin']</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20250120 19:13:29.503" endtime="20250120 19:13:29.532"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>locator=//span[normalize-space()='Admin']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20250120 19:13:29.535" level="INFO">Clicking element '//span[normalize-space()='Admin']'.</msg>
-<status status="PASS" starttime="20250120 19:13:29.533" endtime="20250120 19:13:30.243"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>locator=//div[@class='oxd-topbar-header-title']</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20250120 19:13:30.244" endtime="20250120 19:13:30.550"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20250120 19:13:32.552" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20250120 19:13:30.551" endtime="20250120 19:13:32.552"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>Tirando print da tela após clicar no campo Admin</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250120 19:13:32.554" level="INFO">Tirando print da tela após clicar no campo Admin</msg>
-<status status="PASS" starttime="20250120 19:13:32.553" endtime="20250120 19:13:32.554"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<arg>tela_de_principal_hrm.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20250120 19:13:32.695" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="tela_de_principal_hrm.png"&gt;&lt;img src="tela_de_principal_hrm.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20250120 19:13:32.556" endtime="20250120 19:13:32.695"/>
-</kw>
-<status status="PASS" starttime="20250120 19:13:29.502" endtime="20250120 19:13:32.695"/>
-</kw>
-<kw name="Fechar o navegador" library="orangehrm.resources" type="TEARDOWN">
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20250120 19:13:32.843" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-26.png"&gt;&lt;img src="selenium-screenshot-26.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20250120 19:13:32.697" endtime="20250120 19:13:32.844"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20250120 19:13:32.844" endtime="20250120 19:13:35.143"/>
-</kw>
-<status status="PASS" starttime="20250120 19:13:32.697" endtime="20250120 19:13:35.143"/>
-</kw>
-<doc>Teste para acessar e logar no site orangehrm.
-E somente acessar a tela de login e tela principal.</doc>
-<tag>acesso_orangehrm</tag>
-<timeout value="50 seconds"/>
-<status status="PASS" starttime="20250120 19:13:23.763" endtime="20250120 19:13:35.146"/>
+<status status="PASS" starttime="20250128 09:41:15.634" endtime="20250128 09:41:15.651"/>
 </test>
-<doc>Essa suite testa o site da https://opensource-demo.orangehrmlive.com/.
-Realizando o cadastro, alteração, pesquisa e esclusão do cadastro de usuárion
-no menu Admin.</doc>
-<status status="PASS" starttime="20250120 19:13:23.423" endtime="20250120 19:13:35.149"/>
+<status status="PASS" starttime="20250128 09:41:15.601" endtime="20250128 09:41:15.656"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">acesso_orangehrm</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Orangehrm Teste">Orangehrm Teste</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="For">For</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20250120 19:13:23.467" level="ERROR">Error in file 'c:\Users\Erika Santana\Desktop\robot-basico-teste-orange\teste_orangehrm\orangehrm.resources.robot' on line 108: Creating keyword 'Selecionar o botão Add' failed: User keyword cannot be empty.</msg>
-<msg timestamp="20250120 19:13:23.470" level="ERROR">Error in file 'c:\Users\Erika Santana\Desktop\robot-basico-teste-orange\teste_orangehrm\orangehrm.resources.robot' on line 109: Creating keyword 'Selecionar o campo User Role sendo "Admin"' failed: User keyword cannot be empty.</msg>
-<msg timestamp="20250120 19:13:23.471" level="ERROR">Error in file 'c:\Users\Erika Santana\Desktop\robot-basico-teste-orange\teste_orangehrm\orangehrm.resources.robot' on line 110: Creating keyword 'Preencher o campo Employee Name sendo "#COLOCAR AUTOMATICO PARA O NOME"' failed: User keyword cannot be empty.</msg>
-<msg timestamp="20250120 19:13:23.472" level="ERROR">Error in file 'c:\Users\Erika Santana\Desktop\robot-basico-teste-orange\teste_orangehrm\orangehrm.resources.robot' on line 111: Creating keyword 'Selecionar o campo Status sendo "Enabled"' failed: User keyword cannot be empty.</msg>
-<msg timestamp="20250120 19:13:23.474" level="ERROR">Error in file 'c:\Users\Erika Santana\Desktop\robot-basico-teste-orange\teste_orangehrm\orangehrm.resources.robot' on line 112: Creating keyword 'Preencher o campo Username sendo "#COLOCAR AUTOMATICO PARA O NOME"' failed: User keyword cannot be empty.</msg>
-<msg timestamp="20250120 19:13:23.476" level="ERROR">Error in file 'c:\Users\Erika Santana\Desktop\robot-basico-teste-orange\teste_orangehrm\orangehrm.resources.robot' on line 113: Creating keyword 'Preencher o campo Password sendo "123456789"' failed: User keyword cannot be empty.</msg>
-<msg timestamp="20250120 19:13:23.477" level="ERROR">Error in file 'c:\Users\Erika Santana\Desktop\robot-basico-teste-orange\teste_orangehrm\orangehrm.resources.robot' on line 114: Creating keyword 'Preencher o campo Confirm Password sendo "123456789"' failed: User keyword cannot be empty.</msg>
-<msg timestamp="20250120 19:13:23.479" level="ERROR">Error in file 'c:\Users\Erika Santana\Desktop\robot-basico-teste-orange\teste_orangehrm\orangehrm.resources.robot' on line 115: Creating keyword 'Selecionar o botão Save' failed: User keyword cannot be empty.</msg>
-<msg timestamp="20250120 19:13:23.480" level="ERROR">Error in file 'c:\Users\Erika Santana\Desktop\robot-basico-teste-orange\teste_orangehrm\orangehrm.resources.robot' on line 116: Creating keyword 'Visualizar o cadastro concluido do usuário na tela principal Admin' failed: User keyword cannot be empty.</msg>
 </errors>
 </robot>

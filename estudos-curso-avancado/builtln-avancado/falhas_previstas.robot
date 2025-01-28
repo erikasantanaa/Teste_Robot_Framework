@@ -1,5 +1,6 @@
 *** Test Cases ***
 #### FALHAS PREVISTAS
+#Aquelas falhas que sabemos que podem acontecer nos testes,e que pode ou não continuar o teste
 Exemplo 01: Teste lidando com falhas previstas
     Essa keyword vai falhar, mas vou ignorar (a suíte irá passar)!
     Essa keyword encerra a execução da suíte!    Não pare, por favor!
@@ -30,3 +31,12 @@ Essa keyword vai falhar, não vou ignorar (a suíte irá falhar), mas vou contin
 Essa keyword encerra a execução da suíte!
     [Arguments]     ${STOP}
     Run Keyword if  "${STOP}"=="Para tudo!"   Fatal Error   msg=Para tudo, não adianta continuar com essa falha aqui!!!
+
+# #RESUMO
+# Run Keyword And Ignore Error: Executa uma keyword e ignora se ela falhar. A execução continua normalmente.
+
+# Run Keyword And Expect Error: Executa uma keyword e espera que ela falhe com uma mensagem de erro específica. Se a falha ocorrer como esperado, o teste é considerado bem-sucedido.
+
+# Run Keyword And Continue On Failure: Executa uma keyword e continua a execução mesmo se ela falhar. A falha é registrada, mas a suíte de testes continua.
+
+# Fatal Error: Encerra a execução da suíte de testes imediatamente com uma mensagem de erro.
