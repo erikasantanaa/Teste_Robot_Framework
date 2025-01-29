@@ -10,8 +10,8 @@ Teste de conversão de string para HASH sha256
 Teste de conversão de arquivo para HASH sha256
     Converter o arquivo "arquivo_PDF.pdf" para sha256
 
-Teste minha SeleniumLibrary
-    Abrir meu browser
+# Teste minha SeleniumLibrary
+#     Abrir meu browser
 
 *** Keywords ***
 Converter "${CONTEUDO}" para sha256
@@ -22,5 +22,5 @@ Converter o arquivo "${FILE}" para sha256
     ${CONTEUDO_HASH}   Gerar Hash Arquivo   ./${FILE}
     Log   ${CONTEUDO_HASH}
 
-Abrir meu browser
+# Abrir meu browser
     # My Open Browser    http://www.robotframework.org    chrome
