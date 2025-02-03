@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20250129 13:56:50.724" rpa="false" schemaversion="4">
-<suite id="s1" name="myLibrary" source="c:\Users\Erika Santana\Desktop\robot-basico-avancado-teste-orange\estudos-curso-avancado\libraries-customizadas\MyCustomLibraries_hash\myLibrary.robot">
-<test id="s1-t1" name="Teste de conversão de string para HASH sha256" line="5">
-<kw name="Converter &quot;Estou ficando ninja em Robot Framework!!&quot; para sha256" sourcename="Converter &quot;${CONTEUDO}&quot; para sha256">
-<kw name="Gerar Hash" library="geradorHash">
-<var>${CONTEUDO_HASH}</var>
-<arg>${CONTEUDO}</arg>
-<msg timestamp="20250129 13:56:50.768" level="INFO">Conteúdo: Estou ficando ninja em Robot Framework!!
-Hash gerado: 6526496e1589bb11988c5fd1051d8927a1160b1c3da51ca93ff6e2eab6ecfa38</msg>
-<msg timestamp="20250129 13:56:50.772" level="INFO">${CONTEUDO_HASH} = 6526496e1589bb11988c5fd1051d8927a1160b1c3da51ca93ff6e2eab6ecfa38</msg>
-<status status="PASS" starttime="20250129 13:56:50.768" endtime="20250129 13:56:50.772"/>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on win32)" generated="20250129 14:40:01.373" rpa="false" schemaversion="4">
+<suite id="s1" name="Ola" source="c:\Users\Erika Santana\Desktop\robot-basico-avancado-teste-orange\estudos-curso-avancado\libraries-customizadas\exercicio\ola.robot">
+<test id="s1-t1" name="Teste de saudação e Log" line="5">
+<kw name="Greet User" library="ola">
+<var>${saudacao}</var>
+<arg>Érika</arg>
+<doc>Keyword que retorna uma mensagem de saudação.</doc>
+<msg timestamp="20250129 14:40:01.421" level="INFO">${saudacao} = Olá, Érika!</msg>
+<status status="PASS" starttime="20250129 14:40:01.421" endtime="20250129 14:40:01.425"/>
 </kw>
 <kw name="Log" library="BuiltIn">
-<arg>${CONTEUDO_HASH}</arg>
+<arg>${saudacao}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250129 13:56:50.773" level="INFO">6526496e1589bb11988c5fd1051d8927a1160b1c3da51ca93ff6e2eab6ecfa38</msg>
-<status status="PASS" starttime="20250129 13:56:50.772" endtime="20250129 13:56:50.773"/>
+<msg timestamp="20250129 14:40:01.426" level="INFO">Olá, Érika!</msg>
+<status status="PASS" starttime="20250129 14:40:01.426" endtime="20250129 14:40:01.427"/>
 </kw>
-<status status="PASS" starttime="20250129 13:56:50.767" endtime="20250129 13:56:50.773"/>
+<kw name="Log Message" library="ola">
+<arg>Esta é uma mensagem de log simples.</arg>
+<doc>Keyword que apenas imprime uma mensagem no log.</doc>
+<msg timestamp="20250129 14:40:01.428" level="INFO">Mensagem: Esta é uma mensagem de log simples.</msg>
+<status status="PASS" starttime="20250129 14:40:01.427" endtime="20250129 14:40:01.428"/>
 </kw>
-<status status="PASS" starttime="20250129 13:56:50.766" endtime="20250129 13:56:50.774"/>
+<status status="PASS" starttime="20250129 14:40:01.418" endtime="20250129 14:40:01.428"/>
 </test>
-<status status="PASS" starttime="20250129 13:56:50.732" endtime="20250129 13:56:50.775"/>
+<status status="PASS" starttime="20250129 14:40:01.381" endtime="20250129 14:40:01.430"/>
 </suite>
 <statistics>
 <total>
@@ -30,7 +32,7 @@ Hash gerado: 6526496e1589bb11988c5fd1051d8927a1160b1c3da51ca93ff6e2eab6ecfa38</m
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="myLibrary">myLibrary</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Ola">Ola</stat>
 </suite>
 </statistics>
 <errors>
