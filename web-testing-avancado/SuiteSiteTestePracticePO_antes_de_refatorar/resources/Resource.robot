@@ -3,7 +3,6 @@ Library    SeleniumLibrary
 Library    String
 
 *** Variables ***
-#Organizar os elementos com variavéis para realizar a manutenção de forma fácil e organizada.
 ${BROWSER}      headlesschrome
 ${URL}          http://automationpractice.com
 

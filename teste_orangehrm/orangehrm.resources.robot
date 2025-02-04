@@ -86,7 +86,7 @@ Inserir dados inválidos no username sendo "${USERNAME}" e password sendo "${PAS
 #Caso de teste 03 - Cadastrar usuário em menu Admin
 
 
-FAZEEEER
+# FAZEEEER
 
 
 #---------------------------------------------------------------------
