@@ -1,0 +1,83 @@
+#stages: estagios da pipeline (teste de aceitação - Acceptance Tests)
+stages:
+  - Acceptance Tests
+
+# Job Linux Fedora - execução dos testes sem docker
+#Job: e a tarefa que o estagio vai executar ( se tivesse 3 jobs, seriam executados paralelamente)
+#abaixo como programa um job (obedecer a identação)
+WEB Testing in Chrome:
+    stage: Acceptance Tests
+    image: fedora:latest
+    tags:
+        - gitlab-org-docker
+#arquivos artefatos que pode armazenar
+    artifacts:
+        when: always
+        paths:
+            - ./results
+#expira em 1 semana os arquivos no gitlab
+        expire_in: 1 week
+#antes do script: roda todos os comandos antes do script,para preparar a maquina para rodar o cobot
+    before_script:
+        # 1. Verifica a distribuição
+        - cat /etc/*-release
+        # 2. Atualiza o sistema e baixa recursos
+        - dnf upgrade -y && echo OK
+        - dnf install -y --skip-unavailable jq unzip nss libXtst libXrandr gtk3 xorg-x11-server-Xorg xorg-x11-utils >/dev/null && echo OK
+        # 3. Instala o Python 3
+        - dnf install -y python3 python3-pip && echo OK
+        # 4. OPÇÃO 01: Obter a última versão do Google Chrome
+        #- echo "Obtendo a última versão do Google Chrome..."
+        # - LATEST_CHROME=$(curl -s https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions.json | jq -r '.channels.Stable.version') && echo OK
+        # - echo "----> Última Versão Stable do Chrome encontrada foi a [$LATEST_CHROME]"
+        # 4. OU OPÇÃO 02: Fixar uma versão do Google Chrome
+        - LATEST_CHROME="118.0.5993.70"
+        - CHROME_URL="https://storage.googleapis.com/chrome-for-testing-public/$LATEST_CHROME/linux64/chrome-linux64.zip"
+        # 5. Fazer download do Google Chrome
+        - echo "Baixando o Google Chrome [$CHROME_URL] ..."
+        - curl -LO "$CHROME_URL" && echo OK
+        # 6. Descompactar e instalar o Chrome
+        - echo "Instalando o Google Chrome [$LATEST_CHROME] ..."
+        - unzip -q chrome-linux64.zip && echo OK
+        - mv chrome-linux64 /opt/google-chrome && echo OK
+        - ln -s /opt/google-chrome/chrome /usr/bin/google-chrome && echo OK
+        # 7. Obter a última versão do ChromeDriver
+        - CHROMEDRIVER_URL="https://storage.googleapis.com/chrome-for-testing-public/$LATEST_CHROME/linux64/chromedriver-linux64.zip"
+        # 8. Fazer download do ChromeDriver
+        - echo "Baixando o ChromeDriver [$CHROMEDRIVER_URL] ..."
+        - curl -LO "$CHROMEDRIVER_URL" && echo OK
+        # 9. Descompactar e instalar o ChromeDriver
+        - echo "Instalando o ChromeDriver..."
+        - unzip -q chromedriver-linux64.zip && echo OK
+        - mv chromedriver-linux64/chromedriver /usr/bin/chromedriver && echo OK
+        - chown root /usr/bin/chromedriver && echo OK
+        - chmod +x /usr/bin/chromedriver && echo OK
+        - chmod 755 /usr/bin/chromedriver && echo OK
+        # 10. Verifica as versões do ChromeDriver e Python
+        - chromedriver --version
+        - python3 --version
+        # 11. Instala o Robot Framework e SeleniumLibrary
+        - python3 -m pip install robotframework robotframework-seleniumlibrary | grep "Successfully installed"
+#comando que roda o robot-
+#Info: para rodar o robot, o run da pipeline se passa o caminho da pasta do arquivo. 
+#O ./ reconhece o nome da pasta (tobotAvancado)
+#O headlesschrome para rodar sem interface no chrome
+- O headlesschrome para rodar sem interface no chrome
+    script:
+        - robot -d ./results -v BROWSER:headlesschrome TestSitePractice.robot
+    retry: 1
+
+# Job Docker - execução dos testes em container Docker
+# WEB Testing in Chrome and Docker:
+#     stage: Acceptance Tests
+#     image: registry.gitlab.com/myrobotprojects/mydockerimages:latest
+#     tags:
+#         - gitlab-org-docker
+#     artifacts:
+#         when: always
+#         paths:
+#             - ./results
+#         expire_in: 1 week
+#     script:
+#         - robot -d ./results -v BROWSER:headlesschrome TestSitePractice.robot
+#     retry: 1
