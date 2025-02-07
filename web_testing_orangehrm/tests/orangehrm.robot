@@ -1,6 +1,8 @@
 *** Settings ***
 Documentation    Essa suite testa o site https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
-Resource         orangehrm.resources.robot
+Resource         ../resources/orangehrm.resources.robot 
+Resource         ../resources/PO/logar.robot 
+Resource         ../resources/PO/logar-invalido.robot
 Test Setup       Abrir o navegador
 Test Teardown    Fechar o navegador
 
